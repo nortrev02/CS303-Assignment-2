@@ -5,5 +5,6 @@ using namespace std;
 
 int main()
 {
+    LinkedList mainLL;
     cout << "Hello World!\n";
 }
