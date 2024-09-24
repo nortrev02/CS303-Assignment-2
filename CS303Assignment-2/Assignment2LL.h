@@ -19,7 +19,7 @@ public:
 	bool empty();
 	void insert(int, datapt*);
 	bool remove(int);
-	int find(datapt*);
+	int find(int);
 
 
 };

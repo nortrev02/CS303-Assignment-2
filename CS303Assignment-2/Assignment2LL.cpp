@@ -19,8 +19,16 @@ public:
 			newItem->next = front;
 			front = newItem;
 		}
+		numItems++;
 	}
-	void push_back(datapt*) {
+	void push_back(datapt* newItem) {
+		datapt* traversal = front;
+		while (traversal->next != nullptr) {
+			traversal = traversal->next;
+		}
+		traversal->next = newItem;
+		back = traversal->next;
+		numItems++;
 
 	}
 	void pop_front() {
@@ -28,10 +36,17 @@ public:
 		old = front;
 		front = front->next;
 		delete old;
+		numItems--;
 
 	}
 	void pop_back() {
-
+		datapt* traversal = front;
+		while (traversal->next->next != nullptr) {
+			traversal = traversal->next;
+		}
+		delete traversal->next;
+		traversal->next = nullptr;
+		numItems--;
 	}
 	datapt* front() {
 		return front;
@@ -40,15 +55,32 @@ public:
 		return back;
 	}
 	bool empty() {
-
+		if (front == nullptr) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	void insert(int index, datapt* target) {
-
+	void insert(int index, datapt* newItem) { // unfinished
+		datapt* traversal = front;
+		while (traversal->next != nullptr) {
+			traversal = traversal->next;
+		}
+		numItems++;
 	}
-	bool remove(int index) {
-
+	bool remove(int index) { // unfinished
+		datapt* traversal = front;
+		while (traversal->next != nullptr) {
+			traversal = traversal->next;
+		}
+		numItems--;
 	}
-	int find(datapt* target) {
-
+	int find(int target) { // unfinished
+		datapt* traversal = front;
+		while (traversal->next != nullptr) {
+			if(traversal)
+			traversal = traversal->next;
+		}
 	}
 };
