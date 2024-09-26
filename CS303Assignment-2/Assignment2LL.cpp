@@ -30,7 +30,7 @@ public:
 		back = initiator;
 		numItems = 1;
 	}
-	void push_front(datapt* newItem) {//BROKKKEN!
+	void push_front(datapt* newItem) {
 		if (front == nullptr) {
 			front = newItem;
 			back = newItem;
@@ -41,31 +41,47 @@ public:
 		}
 		numItems++;
 	}
-	void push_back(datapt* newItem) { // WORKS!!!
-		datapt* traversal = front;
-		while (traversal->next != nullptr) {
-			traversal = traversal->next;
+	void push_back(datapt* newItem) {
+		if (numItems == 0) {
+			front = newItem;
+			back = newItem;
 		}
-		traversal->next = newItem;
-		back = traversal->next;
+		else{
+			datapt* traversal = front;
+			while (traversal->next != nullptr) {
+				traversal = traversal->next;
+			}
+			traversal->next = newItem;
+			back = traversal->next;
+		}
 		numItems++;
 
 	}
-	void pop_front() { // BROKEN
+	void pop_front() {
 		datapt* old;
 		old = front;
 		front = front->next;
-		delete old;
+		old->next = nullptr;
+		if (old == back) {
+			back = nullptr;
+		}
 		numItems--;
 
 	}
 	void pop_back() { // BROKEN
 		datapt* traversal = front;
-		while (traversal->next->next != nullptr) {
-			traversal = traversal->next;
+		if (traversal->next == nullptr) {
+			front = nullptr;
+			back = nullptr;
 		}
-		delete traversal->next;
-		traversal->next = nullptr;
+		else{
+			while (traversal->next != back) {
+				traversal = traversal->next;
+			}
+			traversal->next = nullptr;
+			back = traversal;
+		}
+
 		numItems--;
 	}
 	datapt* getFront() {
@@ -82,10 +98,22 @@ public:
 			return false;
 		}
 	}
-	void insert(int index, datapt* newItem) { // unfinished
+	void insert(int index, datapt* newItem) {
+		int iterator = 0;
 		datapt* traversal = front;
-		while (traversal->next != nullptr) {
-			traversal = traversal->next;
+		if (index == 0) {
+			push_front(newItem);
+		}
+		else {
+			while (traversal->next != nullptr) {
+				traversal = traversal->next;
+				iterator++;
+				if (iterator + 1 == index) {
+					datapt* temp = traversal->next;
+					traversal->next = newItem;
+					newItem->next = temp;
+				}
+			}
 		}
 		numItems++;
 	}
