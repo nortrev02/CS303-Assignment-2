@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-using namespace std;
+
 struct datapt {
 	int data;
 	datapt* next;

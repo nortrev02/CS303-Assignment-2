@@ -1,4 +1,7 @@
-#include "Assignment2LL.h"
+#include <iostream>
+
+using namespace std;
+
 struct datapt {
 	int data;
 	datapt* next;
@@ -8,6 +11,7 @@ struct datapt {
 	}
 	datapt(int data) {
 		this->data = data;
+		next = nullptr;
 	}
 };
 
@@ -26,7 +30,7 @@ public:
 		back = initiator;
 		numItems = 1;
 	}
-	void push_front(datapt* newItem) {
+	void push_front(datapt* newItem) {//BROKKKEN!
 		if (front == nullptr) {
 			front = newItem;
 			back = newItem;
@@ -37,7 +41,7 @@ public:
 		}
 		numItems++;
 	}
-	void push_back(datapt* newItem) {
+	void push_back(datapt* newItem) { // WORKS!!!
 		datapt* traversal = front;
 		while (traversal->next != nullptr) {
 			traversal = traversal->next;
@@ -47,7 +51,7 @@ public:
 		numItems++;
 
 	}
-	void pop_front() {
+	void pop_front() { // BROKEN
 		datapt* old;
 		old = front;
 		front = front->next;
@@ -55,7 +59,7 @@ public:
 		numItems--;
 
 	}
-	void pop_back() {
+	void pop_back() { // BROKEN
 		datapt* traversal = front;
 		while (traversal->next->next != nullptr) {
 			traversal = traversal->next;
@@ -71,7 +75,7 @@ public:
 		return back;
 	}
 	bool empty() {
-		if (front == nullptr) {
+		if (numItems == 0) {
 			return true;
 		}
 		else {
@@ -95,8 +99,12 @@ public:
 	int find(int target) { // unfinished
 		datapt* traversal = front;
 		while (traversal->next != nullptr) {
-			if(traversal)
-			traversal = traversal->next;
+			if (traversal->data != target) {
+				return traversal->data;
+			}
+			else {
+				traversal = traversal->next;
+			}
 		}
 	}
 	void printLL() {
@@ -105,5 +113,6 @@ public:
 			cout << traversal->data << " ";
 			traversal = traversal->next;
 		}
+		cout << traversal->data << " ";
 	}
 };

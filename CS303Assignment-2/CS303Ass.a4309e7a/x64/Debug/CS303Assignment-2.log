@@ -1,11 +1,4 @@
 ﻿  Assignment2LL.cpp
-C:\Users\starf\Documents\School Assignments\CS303-Assignment-2\CS303Assignment-2\Assignment2LL.cpp(2,8): error C2011: 'datapt': 'struct' type redefinition
-      C:\Users\starf\Documents\School Assignments\CS303-Assignment-2\CS303Assignment-2\Assignment2LL.h(4,8):
-      see declaration of 'datapt'
-  
-C:\Users\starf\Documents\School Assignments\CS303-Assignment-2\CS303Assignment-2\Assignment2LL.cpp(14,7): error C2011: 'SingleLinkedList': 'class' type redefinition
-      C:\Users\starf\Documents\School Assignments\CS303-Assignment-2\CS303Assignment-2\Assignment2LL.h(11,7):
-      see declaration of 'SingleLinkedList'
-  
   CS303Assignment-2.cpp
   Generating Code...
+  CS303Assignment-2.vcxproj -> C:\Users\Trevor\Documents\School Projects\CS303-Assignment-2\CS303Assignment-2\x64\Debug\CS303Assignment-2.exe
