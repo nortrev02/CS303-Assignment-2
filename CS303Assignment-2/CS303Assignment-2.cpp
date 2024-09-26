@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
-    LinkedList mainLL;
+    datapt first(5);
+    SingleLinkedList mainLL(&first);
+    mainLL.printLL();
     cout << "Hello World!\n";
 }

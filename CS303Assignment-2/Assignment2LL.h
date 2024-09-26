@@ -1,25 +1,30 @@
 #pragma once
+#include <iostream>
+using namespace std;
 struct datapt {
 	int data;
-	int* next;
+	datapt* next;
+	datapt();
+	datapt(int);
 };
 
-class LinkedList {
-private:
+class SingleLinkedList {
+public:
 	datapt* front;
 	datapt* back;
 	int numItems;
-public:
+	SingleLinkedList();
+	SingleLinkedList(datapt*);  
 	void push_front(datapt*);
 	void push_back(datapt*);
 	void pop_front();
 	void pop_back();
-	datapt* front();
-	datapt* back();
+	datapt* getFront();
+	datapt* getBack();
 	bool empty();
 	void insert(int, datapt*);
 	bool remove(int);
 	int find(int);
-
+	void printLL();
 
 };

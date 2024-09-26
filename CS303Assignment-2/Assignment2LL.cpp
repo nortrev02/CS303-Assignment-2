@@ -2,14 +2,30 @@
 struct datapt {
 	int data;
 	datapt* next;
+	datapt() {
+		data = 0;
+		next = nullptr;
+	}
+	datapt(int data) {
+		this->data = data;
+	}
 };
 
-class LinkedList {
-private:
-	datapt* front = nullptr;
-	datapt* back = nullptr;
-	int numItems = 0;
+class SingleLinkedList {
 public:
+	datapt* front;
+	datapt* back;
+	int numItems;
+	SingleLinkedList() {
+		front = nullptr;
+		back = nullptr;
+		numItems = 0;
+	}
+	SingleLinkedList(datapt* initiator) {
+		front = initiator;
+		back = initiator;
+		numItems = 1;
+	}
 	void push_front(datapt* newItem) {
 		if (front == nullptr) {
 			front = newItem;
@@ -48,10 +64,10 @@ public:
 		traversal->next = nullptr;
 		numItems--;
 	}
-	datapt* front() {
+	datapt* getFront() {
 		return front;
 	}
-	datapt* back() {
+	datapt* getBack() {
 		return back;
 	}
 	bool empty() {
@@ -80,6 +96,13 @@ public:
 		datapt* traversal = front;
 		while (traversal->next != nullptr) {
 			if(traversal)
+			traversal = traversal->next;
+		}
+	}
+	void printLL() {
+		datapt* traversal = front;
+		while (traversal->next != nullptr) {
+			cout << traversal->data << " ";
 			traversal = traversal->next;
 		}
 	}
