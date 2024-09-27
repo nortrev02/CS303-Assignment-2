@@ -118,10 +118,10 @@ public:
 					newItem->next = temp;
 				}
 			}
+			numItems++;
 		}
-		numItems++;
 	}
-	bool remove(int index) { // removes a value from the linked list if found
+	void remove(int index) { // removes a value from the linked list if found
 		int iterator = 0;
 		datapt* traversal = front;
 		if (index == 0) {
@@ -139,20 +139,20 @@ public:
 					traversal->next = temp;
 				}
 			}
+			numItems--;
 		}
-		numItems--;
 	}
-	int find(int index) { //returns the value of a given index
+	int find(int value) { //returns the value of a given index
 		datapt* traversal = front;
-		while (traversal->next != nullptr) {
-			if (traversal->data != index) {
+		while (traversal != nullptr && traversal->next != nullptr) {
+			if (traversal->data == value) {
 				return traversal->data;
 			}
 			else {
 				traversal = traversal->next;
 			}
 		}
-		return -1;
+		return numItems;
 	}
 	void printLL() { // prints all the values in the linked list
 		datapt* traversal = front;

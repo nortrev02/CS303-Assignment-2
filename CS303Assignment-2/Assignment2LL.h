@@ -23,7 +23,7 @@ public:
 	datapt* getBack();
 	bool empty();
 	void insert(int, datapt*);
-	bool remove(int);
+	void remove(int);
 	int find(int);
 	void printLL();
 
