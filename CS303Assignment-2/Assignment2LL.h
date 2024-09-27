@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 struct datapt {
@@ -26,4 +27,16 @@ public:
 	int find(int);
 	void printLL();
 
+};
+
+class vectorStack {
+public:
+	std::vector<int> mainVector;
+	int stackSize;
+	vectorStack(int);
+	bool isEmpty();
+	void push(int);
+	void pop();
+	int top();
+	int average();
 };

@@ -1,2 +1,3 @@
 ﻿  Assignment2LL.cpp
-  CS303Assignment-2.vcxproj -> C:\Users\starf\Documents\School Assignments\CS303-Assignment-2\CS303Assignment-2\x64\Debug\CS303Assignment-2.exe
+C:\Users\Trevor\Documents\School Projects\CS303-Assignment-2\CS303Assignment-2\Assignment2LL.cpp(186,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  CS303Assignment-2.vcxproj -> C:\Users\Trevor\Documents\School Projects\CS303-Assignment-2\CS303Assignment-2\x64\Debug\CS303Assignment-2.exe

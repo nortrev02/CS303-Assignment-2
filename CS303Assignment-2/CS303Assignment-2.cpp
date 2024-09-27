@@ -6,15 +6,15 @@ using namespace std;
 int main()
 {
     datapt first(5);
-    datapt ohboy(6);
+    datapt second(6);
+    datapt third(100891231254823327);
     SingleLinkedList mainLL(&first);
-    mainLL.printLL();
-    cout << "Hello World!\n";
-    datapt second(9);
     mainLL.push_back(&second);
+    mainLL.push_front(&third);
+    mainLL.printLL();
     mainLL.pop_front();
     mainLL.pop_front();
-    mainLL.push_front(&ohboy);
-    mainLL.pop_back();
+    mainLL.printLL();
+    cout << mainLL.find(0);
     mainLL.printLL();
 }
