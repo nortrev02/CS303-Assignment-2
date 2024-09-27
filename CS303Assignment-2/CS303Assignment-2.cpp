@@ -27,13 +27,12 @@ int main()
     vectorStack mainStack(100000);
     if (!mainStack.isEmpty()) {
         cout << "This Stack Is Not Empty!" << endl;
-        mainStack.push(1);
-        mainStack.push(2);
-        mainStack.push(3);
-        cout << "Top of the Stack: " << mainStack.top() << endl;
-        mainStack.pop();
-        cout << "Top of the Stack now: " << mainStack.top() << endl;
-        cout << "Average count of the stack: " << mainStack.average() << endl;
-
     }
+     mainStack.push(1);
+     mainStack.push(2);
+     mainStack.push(3);
+     cout << "Top of the Stack: " << mainStack.top() << endl;
+     mainStack.pop();
+     cout << "Top of the Stack now: " << mainStack.top() << endl;
+     cout << "Average count of the stack: " << mainStack.average() << endl;
 }
